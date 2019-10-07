@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FsizeDirective } from './fsize.directive';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FsizeDirective
+    FsizeDirective,
+    FormComponent
   ],
   imports: [
     BrowserModule,
