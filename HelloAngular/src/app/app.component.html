@@ -3,6 +3,7 @@
   <h1 [ngClass]="titleColor" (click)="toggleTitleColor()" [appFsize]="'13px'">
     {{title}}
   </h1>
+  <button (click)="fetchNewTitle()">Fetch new title</button>
 </div>
 <button [disabled]="disabledBtn">disabled button</button>
 <button (click)="myMethod($event)">Event</button>

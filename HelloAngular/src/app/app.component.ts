@@ -1,4 +1,12 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+interface ResponseData {
+  body: string,
+  id: number,
+  userId: number,
+  title: string
+}
 
 @Component({
   selector: 'app-root',
@@ -11,9 +19,18 @@ export class AppComponent {
   titleColor = 'red';
   name = 'John';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  ngOnInit() {
+  fetchNewTitle() {
+    this.http.get<ResponseData>('https://jsonplaceholder.typicode.com/posts/1')
+      .subscribe(
+        data => {
+          this.title = data.title
+        },
+        error => {
+          console.log(error)
+        }
+      )
   }
 
   toggleTitleColor() {
