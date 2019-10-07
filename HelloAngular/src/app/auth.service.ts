@@ -5,7 +5,7 @@ export class AuthService {
 
   constructor() { }
 
-  isAuthorized() : boolean {
+  isAuthorized(): boolean {
     return true
   }
 }

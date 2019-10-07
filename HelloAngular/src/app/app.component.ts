@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FootballDataService } from './football-data.service'
 
 @Component({
   selector: 'app-root',
@@ -7,16 +6,14 @@ import { FootballDataService } from './football-data.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  playerList: object[];
   title = 'app works!';
   disabledBtn = true;
   titleColor = 'red';
   name = 'John';
 
-  constructor(private footballData: FootballDataService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.playerList = this.footballData.getPlayerList()
   }
 
   toggleTitleColor() {

@@ -10,9 +10,8 @@
 <input type="text" (input)="myMethod($event)">
 <div *ngIf="true">NGIF DIRECTIVE</div>
 
-<ul *ngFor="let player of playerList">
-  <li>{{player.name}}</li>
-</ul>
+<a routerLink="login">Login</a>
+<a routerLink="players">Players</a>
 
 <div [ngSwitch]="'contact'">
   <p *ngSwitchCase="'info'">info</p>
@@ -24,4 +23,4 @@
 <input type="text" [(ngModel)]="name">
 {{name}}
 
-<app-form></app-form>
+<router-outlet></router-outlet>
