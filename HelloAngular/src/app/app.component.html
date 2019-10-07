@@ -10,6 +10,10 @@
 <input type="text" (input)="myMethod($event)">
 <div *ngIf="true">NGIF DIRECTIVE</div>
 
+<ul *ngFor="let player of playerList">
+  <li>{{player.name}}</li>
+</ul>
+
 <div [ngSwitch]="'contact'">
   <p *ngSwitchCase="'info'">info</p>
   <p *ngSwitchCase="'contact'">contact</p>
