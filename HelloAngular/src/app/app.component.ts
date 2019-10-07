@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app works!';
   disabledBtn = true;
+
+  myMethod(e) {
+    this.title = e.target.value
+  }
 }

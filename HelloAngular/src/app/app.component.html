@@ -5,5 +5,6 @@
   </h1>
 </div>
 <button [disabled]="disabledBtn">disabled button</button>
+<button (click)="myMethod($event)">Event</button>
 
-
+<input type="text" (input)="myMethod($event)">
