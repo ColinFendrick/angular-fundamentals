@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div>
-  <h1>
+  <h1 [ngClass]="titleColor" (click)="toggleTitleColor()">
     {{title}}
   </h1>
 </div>
