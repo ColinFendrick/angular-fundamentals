@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-form',
@@ -11,8 +11,10 @@ export class FormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.reactiveForm = formBuilder.group({
-      email: [null],
-      password: [null],
+      email: [null, Validators.required],
+      password: [null, Validators.compose([
+        Validators.minLength(2), Validators.required
+      ])],
       privacyAndPolicy: [false]
     })
   }
@@ -22,6 +24,9 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.reactiveForm.get('password').valueChanges.subscribe(value => {
+      console.log(value)
+    })
   }
 
 }
