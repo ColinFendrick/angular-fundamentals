@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'app works!';
   disabledBtn = true;
   titleColor = 'red';
+  name = 'John';
 
   toggleTitleColor() {
     if (this.titleColor === 'red') {

@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div>
-  <h1 [ngClass]="titleColor" (click)="toggleTitleColor()">
+  <h1 [ngClass]="titleColor" (click)="toggleTitleColor()" [appFsize]="'13px'">
     {{title}}
   </h1>
 </div>
@@ -8,3 +8,15 @@
 <button (click)="myMethod($event)">Event</button>
 
 <input type="text" (input)="myMethod($event)">
+<div *ngIf="true">NGIF DIRECTIVE</div>
+
+<div [ngSwitch]="'contact'">
+  <p *ngSwitchCase="'info'">info</p>
+  <p *ngSwitchCase="'contact'">contact</p>
+  <p *ngSwitchCase="'about'">about</p>
+  <p *ngSwitchDefault>page</p>
+</div>
+
+<input type="text" [(ngModel)]="name">
+{{name}}
+
