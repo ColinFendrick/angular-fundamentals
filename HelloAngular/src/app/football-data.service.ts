@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class FootballDataService {
@@ -13,8 +14,8 @@ export class FootballDataService {
       name: 'Robert Lewandowski'
     }
   ]
-  constructor() { }
+  constructor(private auth: AuthService) { }
   getPlayerList() : object[] {
-    return this.playerList
+    return this.auth.isAuthorized() ? this.playerList : []
   }
 }

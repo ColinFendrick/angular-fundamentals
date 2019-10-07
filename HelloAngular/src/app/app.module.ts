@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FsizeDirective } from './fsize.directive';
 import { FormComponent } from './form/form.component';
 import { FootballDataService } from './football-data.service';
+import { AuthService } from './auth.service'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { FootballDataService } from './football-data.service';
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [FootballDataService],
+  providers: [FootballDataService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
